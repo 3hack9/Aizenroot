@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPT: Modulo 1</title>
+  <style>
+    /* Estilos para la barra de navegación */
+    .navbar {
+        background-color: #007bff;
+        padding: 10px 20px;
+        color: #fff;
+        width: 100%;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .navbar h1 {
+        margin: 0;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .navbar li {
+        margin-right: 20px;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    /* Estilos para el contenido del libro */
+    .book-content {
+      margin: 70px;
+      font-family: Arial, sans-serif; /* Fuente del texto */
+    }
+
+    .book-title {
+      text-align: center;
+      font-size: 24px; /* Tamaño del título */
+      color: #333; /* Color del título */
+      margin-bottom: 10px; /* Espacio inferior del título */
+    }
+
+    .book-content-text {
+      line-height: 1.6; /* Espaciado entre líneas */
+      color: #444; /* Color del texto */
+    }
+
+    .book-content-text p {
+      margin-bottom: 15px; /* Espacio inferior entre párrafos */
+      text-align: justify; /* Justificación del texto */
+    }
+
+    /* Estilos para las imágenes */
+    .book-image {
+      display: block; /* Mostrar las imágenes como bloques */
+      margin: 0 auto 20px; /* Margen inferior y centrado horizontal */
+      max-width: 300px; /* Ancho máximo de las imágenes */
+      height: auto; /* Altura automática */
+    }
+
+    /* Estilos para el botón de volver */
+    .back-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <div class="navbar">
+      <ul>
+          <li><a href="/app.html">Inicio</a></li>
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Contacto</a></li>
+      </ul>
+  </div>
+  <!-- Contenido del libro -->
+  <div class="book-content">
+    <h2 class="book-title">Introducción a la Seguridad en Aplicaciones</h2>
+    <div class="book-content-text">
+      <p>
+        La seguridad en aplicaciones es un aspecto crítico en el desarrollo de software en la era digital. Desde la protección de datos sensibles hasta la prevención de intrusiones maliciosas, la seguridad en aplicaciones abarca una serie de conceptos y prácticas que son fundamentales para garantizar la integridad, confidencialidad y disponibilidad de los sistemas informáticos.
+      </p>
+       
+      <p>
+        1.1 Conceptos Esenciales
+      </p>
+       <img class="book-image" src="/Imagenes/imagen_conceptos_esenciales.jpg" alt="Conceptos Esenciales">
+      <p> 
+        En el contexto de seguridad en aplicaciones, es crucial entender conceptos como la autenticación, la autorización, el cifrado, la integridad de datos, la gestión de identidad y acceso, y la prevención de ataques. Estos conceptos forman la base para diseñar y desarrollar aplicaciones seguras.
+      </p>
+         
+      <p>
+        1.2 Tipos de Aplicaciones
+      </p>
+        <img class="book-image" src="/Imagenes/imagen_tipos_aplicaciones.jpg" alt="Tipos de Aplicaciones">
+      <p>
+        Las aplicaciones pueden clasificarse en una variedad de tipos, incluyendo aplicaciones web, móviles, de escritorio y embebidas. Cada tipo de aplicación presenta sus propios desafíos y consideraciones de seguridad, que deben abordarse de manera específica para garantizar su protección adecuada.
+      </p>
+      
+      <p>
+        1.3 OWASP (Open Web Application Security Project)
+      </p>
+        <img class="book-image" src="/Imagenes/owasp.jpg" alt="Tipos de Aplicaciones">
+      <p>
+        
+        OWASP es una comunidad dedicada a mejorar la seguridad del software. Proporciona recursos, herramientas y guías para ayudar a los desarrolladores a identificar y mitigar vulnerabilidades en aplicaciones web. La lista OWASP Top 10 es una referencia ampliamente utilizada que enumera las principales vulnerabilidades de seguridad en aplicaciones web.
+      </p>
+      <img class="book-image" src="Imagenes/ser.png" alt="SER">
+
+      <p>
+        1.4 SER (Security Requirement Engineering)
+        La ingeniería de requisitos de seguridad (SER) se refiere al proceso de identificar, analizar y especificar los requisitos de seguridad de un sistema o aplicación. Esto implica comprender las amenazas potenciales, evaluar los riesgos y definir medidas de seguridad adecuadas para proteger la aplicación contra ataques.
+      </p>
+      <img class="book-image" src="imagen_SQUARE.jpg" alt="SQUARE">
+
+      <p>
+        1.5 SQUARE (Security Quality Requirements Engineering)
+        SQUARE es un enfoque sistemático para incorporar requisitos de seguridad en el ciclo de vida del desarrollo de software. Ayuda a los equipos de desarrollo a definir y gestionar los requisitos de seguridad de manera efectiva, desde la fase de planificación hasta la implementación y mantenimiento del software.
+      </p>
+      <img class="book-image" src="imagen_OCTAVE.jpg" alt="OCTAVE">
+
+      <p>
+        1.6 OCTAVE (Operationally Critical Threat, Asset and Vulnerability Evaluation)
+        OCTAVE es un marco de evaluación de riesgos diseñado para ayudar a las organizaciones a identificar y gestionar los riesgos de seguridad de manera integral. Se centra en la identificación de activos críticos, amenazas potenciales y vulnerabilidades, y en el desarrollo de estrategias de mitigación de riesgos.
+      </p>
+      
+      <p>
+        En resumen, la seguridad en aplicaciones es un proceso continuo que requiere una comprensión profunda de los conceptos de seguridad, la aplicación de prácticas de desarrollo seguro y el uso de marcos y herramientas adecuadas para identificar, evaluar y mitigar los riesgos de seguridad.
+      </p>
+    </div>
+
+    <!-- Botón para volver a app.html -->
+    <button class="back-button" onclick="goBack()">Volver</button>
+    <!-- Botón para ir a practicas.html -->
+    <button class="back-button" onclick="goToPracticas()">Prácticas</button>
+  </div>
+
+  <script>
+    // Función para retroceder a la página anterior (app.html)
+    function goBack() {
+      window.history.back();
+    }
+
+    // Función para redirigir a practicas.html
+    function goToPracticas() {
+      window.location.href = 'practicas.html';
+    }
+  </script>
+</body>
+</html>
+
