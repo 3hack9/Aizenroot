@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PPT: Modulo 1</title>
+  <style>
+    /* Estilos para la barra de tareas */
+    .navbar {
+        background-color: #007bff;
+        padding: 10px 20px;
+        color: #fff;
+        width: 100%;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .navbar-title {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .navbar li {
+      margin-right: 18px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .navbar a:hover {
+      color: #f0f0f0;
+    }
+
+    /* Estilos para la clase Book Store */
+    .book-store {
+      margin-top: 15px;
+      padding: 18px;
+    }
+
+    .book-store-title {
+      color: #333;
+      text-align: center;
+    }
+
+    .book {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .book img {
+      width: 250px; /* Ancho de la imagen */
+      height: auto; /* Altura automática proporcional */
+      margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    .book-details {
+      flex: 1; /* Ocupa todo el espacio disponible */
+      text-align: center;
+    }
+
+    .book-title {
+      color: #333;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .book-author {
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .book-description {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .book-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .book-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <ul>
+        <li><a href="/Calculadora/calculadora.html">Calculadora</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+  </div>
+
+  <div class="book-store">
+    <h2 class="book-store-title">work space</h2>
+    <div class="book">
+      <div class="book-details">
+        <img src="Imagenes/cover1.png" alt="Portada del Libro 1">
+        <h3 class="book-title">Introducción a la Seguridad en Aplicaciones.</h3>
+        <p class="book-description">Descripción del Libro 1</p>
+        <button class="book-button" onclick="openBook('1')">Abrir</button>
+      </div>
+    </div>
+    <div class="book">
+      <div class="book-details">
+        <img src="Imagenes/cover2.png" alt="Portada del Libro 2">
+        <h3 class="book-title">Diseño y Arquitectura de Aplicaciones Seguras.</h3>
+        <p class="book-description">Descripción del Libro 2</p>
+        <button class="book-button" onclick="openBook('2')">Abrir</button>
+      </div>
+    </div>
+    <div class="book">
+      <div class="book-details">
+        <img src="Imagenes/cover3.png" alt="Portada del Libro 3">
+        <h3 class="book-title">Vulnerabilidades y Pruebas de seguridad en Aplicaciones Web</h3>
+        <p class="book-description">Descripción del Libro 3</p>
+        <button class="book-button" onclick="openBook('3')">Abrir</button>
+      </div>
+    </div>
+    <!-- Agregar dos libros más -->
+    <div class="book">
+      <div class="book-details">
+        <img src="Imagenes/cover4.jpg" alt="Portada del Libro 4">
+        <h3 class="book-title">Principales Vulnerabilidades en Aplicaciones Movil y de Escritorio</h3>
+        <p class="book-description">Descripción del Libro 4</p>
+        <button class="book-button" onclick="openBook('4')">Abrir</button>
+      </div>
+    </div>
+    <div class="book">
+      <div class="book-details">
+        <img src="Imagenes/cover5.png" alt="Portada del Libro 5">
+        <h3 class="book-title">Pruebas de Seguridad en Contenedores de Docker</h3>
+        <p class="book-description">Descripción del Libro 5</p>
+        <button class="book-button" onclick="openBook('5')">Abrir</button>
+      </div>
+    </div>
+    <!-- Fin de los dos libros adicionales -->
+  </div>
+
+  <script>
+    function openBook(bookId) {
+      window.location.href = 'books/book' + bookId + '.html';
+    }
+  </script>
+</body>
+</html>
