@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Índice Académico</title>
+    <style>
+        /* Estilos para la barra de navegación */
+        .navbar {
+            background-color: #007bff;
+            padding: 10px 20px;
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Estilos para la calculadora */
+        .calculator {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            margin: 85px auto;
+        }
+
+        .calculator h1 {
+            margin-top: 0;
+        }
+
+        .calculator label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .calculator input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .calculator button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #fff;
+            borInicioder: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calculator button.calculate-btn {
+            background-color: #007bff;
+        }
+
+        .calculator button.add-btn {
+            background-color: #28a745;
+        }
+
+        .calculator button.delete-btn {
+            background-color: #dc3545;
+        }
+
+        .calculator button:hover {
+            filter: brightness(90%);
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .subject-container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+
+        <ul>
+            <li><a href="/app.html"">Inicio</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido de la calculadora -->
+    <div class="calculator">
+        <h1>Calcular Índice</h1>
+        <div class="subject-container">
+            <div class="subject">
+                <label for="subject1">Asignatura 1:</label>
+                <input type="number" id="subject1" class="subject-input">
+            </div>
+        </div>
+        <button class="add-btn" onclick="addSubject()">Agregar Asignatura</button>
+        <button class="delete-btn" onclick="deleteSubject()">Eliminar Última Asignatura</button>
+        <button class="calculate-btn" onclick="calculate()">Calcular</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        var subjectCount = 1; // Contador de asignaturas, inicializado en 1
+
+        function addSubject() {
+            subjectCount++; // Incrementa el contador de asignaturas
+            var subjectContainer = document.querySelector(".subject-container");
+
+            // Crea un nuevo div para la asignatura
+            var newSubjectDiv = document.createElement("div");
+            newSubjectDiv.classList.add("subject");
+
+            // Crea el label y el input para la nueva asignatura
+            var label = document.createElement("label");
+            label.setAttribute("for", "subject" + subjectCount);
+            label.textContent = "Asignatura " + subjectCount + ":";
+            var input = document.createElement("input");
+            input.setAttribute("type", "number");
+            input.setAttribute("id", "subject" + subjectCount);
+            input.classList.add("subject-input");
+
+            // Agrega el label y el input al div de la asignatura
+            newSubjectDiv.appendChild(label);
+            newSubjectDiv.appendChild(input);
+
+            // Agrega el div de la asignatura al contenedor
+            subjectContainer.appendChild(newSubjectDiv);
+        }
+
+        function deleteSubject() {
+            if (subjectCount > 1) {
+                var subjectContainer = document.querySelector(".subject-container");
+                subjectContainer.removeChild(subjectContainer.lastChild);
+                subjectCount--;
+            }
+        }
+
+        function calculate() {
+            var inputs = document.querySelectorAll(".subject-input");
+            var total = 0;
+
+            // Suma las notas de todas las asignaturas
+            inputs.forEach(function(input) {
+                total += parseFloat(input.value);
+            });
+
+            // Calcula el promedio
+            var average = total / inputs.length;
+            var grade = getGrade(average);
+
+            // Muestra el resultado
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "Promedio: " + average.toFixed(2) + "<br>Índice Académico: " + grade;
+        }
+
+        function getGrade(average) {
+            // Función para calcular el índice académico
+            // Añade tu lógica para determinar el índice académico basado en el promedio
+            // Aquí proporciono una implementación simple
+            if (average >= 90) {
+                return "A+";
+            } else if (average >= 85) {
+                return "A";
+            } else if (average >= 80) {
+                return "A-";
+            } else if (average >= 75) {
+                return "B+";
+            } else if (average >= 70) {
+                return "B";
+            } else if (average >= 65) {
+                return "B-";
+            } else if (average >= 60) {
+                return "C+";
+            } else if (average >= 55) {
+                return "C";
+            } else if (average >= 50) {
+                return "C-";
+            } else {
+                return "F";
+            }
+        }
+    </script>
+</body>
+</html>
